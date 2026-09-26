@@ -1,0 +1,11 @@
+{
+  "id": "model_gallery",
+  "name": "Model Gallery",
+  "main": "model_gallery.js",
+  "author": "alumina6767",
+  "description": "Minimal test plugin for Blockbench",
+  "version": "0.0.28",
+  "min_version": "4.8.0",
+  "variant": "both",
+  "icon": "menu_book"
+}
