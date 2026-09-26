@@ -1093,14 +1093,13 @@
     const exportedAtText = exportedAt.toLocaleString('ja-JP');
 
     const folderSummary = absoluteFolders.length
-      ? absoluteFolders.map(folder => '<div class="mg-export-folder-chip" title="' + escapeHtml(folder) + '">' + escapeHtml(folder) + '</div>').join('')
+      ? absoluteFolders.map(folder => '<div class="mg-export-folder-chip">' + escapeHtml(path.basename(folder)) + '</div>').join('')
       : '<div class="mg-export-empty">No loaded folders</div>';
 
     const groupMarkup = groups.length
       ? groups.map(group => {
-          const title = group.folderPath ? group.folderPath : 'Unknown source folder';
+          const title = group.folderPath ? path.basename(group.folderPath) : 'Unknown source folder';
           const safeTitle = escapeHtml(title);
-          const safeAbsolute = group.folderPath ? escapeHtml(group.folderPath) : '';
           const cards = group.items.map(item => {
             const relativePath = escapeHtml(getGalleryItemRelativePath(item, group.folderPath));
             const fileName = escapeHtml(item.fileName || path.basename(item.filePath || ''));
@@ -1120,7 +1119,6 @@
           return '<section class="mg-export-group">' +
             '<div class="mg-export-group-head">' +
               '<div class="mg-export-group-title">' + safeTitle + '</div>' +
-              '<div class="mg-export-group-subtitle">' + (safeAbsolute || 'Relative paths not available') + '</div>' +
               '<div class="mg-export-group-count">' + group.items.length + ' item(s)</div>' +
             '</div>' +
             '<div class="mg-export-grid">' + cards + '</div>' +
@@ -1150,7 +1148,6 @@
           '.mg-export-group{margin-top:16px;padding:16px;background:var(--panel);border:1px solid var(--border);border-radius:12px;}' +
           '.mg-export-group-head{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:start;margin-bottom:14px;}' +
           '.mg-export-group-title{font-size:18px;font-weight:700;word-break:break-all;}' +
-          '.mg-export-group-subtitle{grid-column:1 / span 1;color:var(--muted);font-size:12px;word-break:break-all;}' +
           '.mg-export-group-count{grid-column:2 / span 1;color:#d3deeb;font-size:12px;white-space:nowrap;align-self:center;}' +
           '.mg-export-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}' +
           '.mg-export-card{background:var(--panel2);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;min-height:100%;}' +
@@ -1173,7 +1170,7 @@
               '<div>Folders: ' + groups.filter(group => group.folderPath).length + '</div>' +
             '</div>' +
             '<div class="mg-export-summary">' +
-              '<div class="mg-export-summary-title">Loaded absolute folder paths</div>' +
+              '<div class="mg-export-summary-title">Loaded folders</div>' +
               '<div class="mg-export-folder-list">' + folderSummary + '</div>' +
             '</div>' +
           '</header>' +
@@ -1744,7 +1741,7 @@
     author: 'alumina6767',
     description: 'Minimal test plugin for Blockbench',
     icon: 'menu_book',
-    version: '0.0.28',
+    version: '0.0.29',
     min_version: '4.8.0',
     variant: 'both',
 

@@ -4,7 +4,7 @@
   "main": "model_gallery.js",
   "author": "alumina6767",
   "description": "Minimal test plugin for Blockbench",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "min_version": "4.8.0",
   "variant": "both",
   "icon": "menu_book"
