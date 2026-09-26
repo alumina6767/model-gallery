@@ -2,6 +2,10 @@
 
 リソースパック内の CEM（`.jem`）やバニラモデル（`.json`）を自動走査し、3D サムネイル付きのギャラリーとして一覧表示する [Blockbench](https://www.blockbench.net/) プラグインです。
 
+## デモ動画
+
+https://github.com/user-attachments/assets/d574d335-83d1-49b1-a923-bb75fe5548b2
+
 ## 主な機能
 
 - フォルダを指定して配下のモデルファイルを再帰的にスキャン（`.jem` / `.json` / `.bbmodel` など、Blockbench に登録された対応拡張子を自動検出）
