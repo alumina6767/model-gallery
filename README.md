@@ -22,7 +22,7 @@
 1. Blockbench を起動し、メニューから **File → Plugins** を開く
 2. 右上の **Load Plugin from URL** を選択
 3. このリポジトリの `model_gallery.js` の raw URL を入力
-   - 例: `https://raw.githubusercontent.com/<owner>/<repo>/main/model_gallery.js`
+   - 例: `https://github.com/alumina6767/model-gallery/raw/refs/heads/master/model_gallery.js`
 4. 読み込み後、**Tools** メニューに **Open Model Gallery** が追加されます
 
 ### 方法B: ローカルフォルダにコピーする（開発・オフライン向け）
